@@ -45,19 +45,33 @@ pwd ：显示当前所在目录
 
 mkdir ：创建一个目录  
 mkdir -p ：创建层级目录(递归创建)  
+```bash
+[root@VM-16-14-centos home]# pwd
+/home
+[root@VM-16-14-centos home]# mkdir wildwolf
+[root@VM-16-14-centos home]# ls
+apache-tomcat-9.0.52  lighthouse  mildlamb  wildwolf
+[root@VM-16-14-centos home]# mkdir -p EngulfM/champion/kindred
+[root@VM-16-14-centos home]# ls
+apache-tomcat-9.0.52  EngulfM  lighthouse  mildlamb  wildwolf
+[root@VM-16-14-centos home]# cd EngulfM
+[root@VM-16-14-centos EngulfM]# ls
+champion
+[root@VM-16-14-centos EngulfM]# cd champion
+[root@VM-16-14-centos champion]# ls
+kindred
+```
+rmdir ：删除目录，只能删除空目录，如果下面存在文件，需要先删除文件  
+rmdir -p ：递归删除多个目录  
 
 rm ：移除文件或者文件夹  
 -f：忽略不存在的文件，不会出现警告，强制删除
 -r：递归删除目录  
 -i：互动，删除时询问是否删除
 
-
-rmdir ：删除目录，只能删除空目录，如果下面存在文件，需要先删除文件  
-rmdir -p ：递归删除多个目录  
-
 cp ：复制文件或者目录  
-cp 拷贝文件 新的地方  
+格式：cp 拷贝文件 新的地方  
 
-mv ：移动文件或文件夹/重命名文件夹  
+mv ：移动文件或文件夹(剪切)/重命名文件夹  
 -f 强制  
 -u 只替换更新过的文件
