@@ -104,6 +104,8 @@ drwxrwxrwt.   9 root root  4096 Dec  1 16:28 tmp
 drwxr-xr-x.  14 root root  4096 Jan  8  2021 usr
 drwxr-xr-x.  20 root root  4096 Jan  8  2021 var
 ```
+文件属性  文件数量  属主  属组  文件大小  时间  名称  
+
 在linux中第一个字符代表这个文件是目录，文件或链接文件等等
 - 第一个字符为[d]则是目录
 - 第一个字符为[-]则是文件
