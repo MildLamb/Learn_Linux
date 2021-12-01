@@ -75,3 +75,38 @@ cp ：复制文件或者目录
 mv ：移动文件或文件夹(剪切)/重命名文件夹  
 -f 强制  
 -u 只替换更新过的文件
+
+# 文件属性查看与修改
+```bash
+[root@VM-16-14-centos ~]# cd /
+[root@VM-16-14-centos /]# ls -ll
+total 76
+lrwxrwxrwx.   1 root root     7 Mar  7  2019 bin -> usr/bin
+dr-xr-xr-x.   5 root root  4096 Nov 23 09:00 boot
+drwxr-xr-x    2 root root  4096 Nov  5  2019 data
+drwxr-xr-x   20 root root  3040 Nov 23 10:28 dev
+drwxr-xr-x.  96 root root 12288 Nov 23 10:28 etc
+drwxr-xr-x.   5 root root  4096 Dec  1 12:16 home
+drwxr-xr-x    2 root root  4096 Nov 23 17:22 images
+lrwxrwxrwx.   1 root root     7 Mar  7  2019 lib -> usr/lib
+lrwxrwxrwx.   1 root root     9 Mar  7  2019 lib64 -> usr/lib64
+drwx------.   2 root root 16384 Mar  7  2019 lost+found
+drwxr-xr-x.   2 root root  4096 Apr 11  2018 media
+drwxr-xr-x.   2 root root  4096 Apr 11  2018 mnt
+drwxr-xr-x.   5 root root  4096 Jan  8  2021 opt
+dr-xr-xr-x  106 root root     0 Nov 23 10:28 proc
+dr-xr-x---.   6 root root  4096 Nov 23 09:00 root
+drwxr-xr-x   24 root root   820 Dec  1 16:29 run
+lrwxrwxrwx.   1 root root     8 Mar  7  2019 sbin -> usr/sbin
+drwxr-xr-x.   2 root root  4096 Apr 11  2018 srv
+dr-xr-xr-x   13 root root     0 Dec  1 11:37 sys
+drwxrwxrwt.   9 root root  4096 Dec  1 16:28 tmp
+drwxr-xr-x.  14 root root  4096 Jan  8  2021 usr
+drwxr-xr-x.  20 root root  4096 Jan  8  2021 var
+```
+在linux中第一个字符代表这个文件是目录，文件或链接文件等等
+- 第一个字符为[d]则是目录
+- 第一个字符为[-]则是文件
+- 若为[l]则表示为链接文档
+- 若为[b]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)
+- 若为[c]则表示为装置文件里面的串行端口设备，例如键盘，鼠标(一次性读取装置)
