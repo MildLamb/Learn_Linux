@@ -121,12 +121,12 @@ drwxr-xr-x.  20 root root  4096 Jan  8  2021 var
 ![image](https://user-images.githubusercontent.com/61497283/131208069-2171d0e8-ecbe-4c89-a468-a3d34b8aa65f.png)
 
 ## 修改属性
-1. chgrp：更改文件属组  
+- 1. chgrp：更改文件属组  
 chgrp [-R] 属组名 文件名  
-2. chown：更改文件属主，也可以同时更改文件属组  
+- 2. chown：更改文件属主，也可以同时更改文件属组  
 chown [-R] 属主名 文件名  
 chown [-R] 属主名: 属组名 文件名  
-**3. chmod：更改文件9个属性(必须掌握)**  
+- 3. **chmod：更改文件9个属性(必须掌握)**  
 当你没权限操作文件时就可能需要修改权限了  
 chmod [-R] xyz 文件或目录  
 例如：chmod 777 filename  , 7 = 4(r) + 2(w) + 1(x)  
