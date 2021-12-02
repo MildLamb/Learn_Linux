@@ -363,6 +363,27 @@ userdel -r 用户名称    ：删除用户的时候连同该用户的目录一�
   4. 在切换用户时，如果想在切换用户之后使用新用户的工作环境，可以在su和username之间加-，例如【su - root】
   5. $表示普通用户
   6. #表示超级用户，也就是root用户
-
+```bash
 [root@VM-16-14-centos home]#  
+```
 [当前用户名@主机名 当前目录]
+
+- 切换用户实操
+```bash
+[root@VM-16-14-centos home]# su wildwolf
+[wildwolf@VM-16-14-centos home]$ 
+```
+- 查看主机名和修改主机名
+```bash
+[wildwolf@VM-16-14-centos home]$ hostname
+VM-16-14-centos
+[wildwolf@VM-16-14-centos home]$ hostname newhostname
+```
+- 修改用户密码
+```bash
+[root@VM-16-14-centos home]# Changing password for user yourusername
+```
+- 锁定用户(-l锁定  -u解锁)
+```bash
+[root@VM-16-14-centos home]# passwd -l yourusername
+```
