@@ -431,3 +431,87 @@ tcpdump:x:72:72::/:/sbin/nologin
 kindred:x:1000:1000::/home/kindred:/bin/bash
 ```
 
+
+### 磁盘管理
+- df：列出文件系统整体使用量  加-h 可以以M的形式展示  不加是字节大小显示 
+- du：检查磁盘空间使用量    du -sm /* : 检查根目录下每个目录所占用的容量
+
+```bash
+[root@VM-16-14-centos ~]# df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+devtmpfs         1928480       0   1928480   0% /dev
+tmpfs            1940096      24   1940072   1% /dev/shm
+tmpfs            1940096     520   1939576   1% /run
+tmpfs            1940096       0   1940096   0% /sys/fs/cgroup
+/dev/vda1       82437508 6367652  72614352   9% /
+tmpfs             388020       0    388020   0% /run/user/0
+[root@VM-16-14-centos ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        1.9G     0  1.9G   0% /dev
+tmpfs           1.9G   24K  1.9G   1% /dev/shm
+tmpfs           1.9G  520K  1.9G   1% /run
+tmpfs           1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/vda1        79G  6.1G   70G   9% /
+tmpfs           379M     0  379M   0% /run/user/0
+```
+
+```bash
+[root@VM-16-14-centos home]# du
+16	./wildwolf
+8	./lighthouse/.ssh
+24	./lighthouse
+16	./mildlamb
+629820	.
+[root@VM-16-14-centos home]# du -a
+4	./wildwolf/.bashrc
+4	./wildwolf/.bash_logout
+4	./wildwolf/.bash_profile
+16	./wildwolf
+4	./lighthouse/.bashrc
+4	./lighthouse/.bash_logout
+4	./lighthouse/.ssh/authorized_keys
+8	./lighthouse/.ssh
+4	./lighthouse/.bash_profile
+24	./lighthouse
+4	./mildlamb/.bashrc
+4	./mildlamb/.bash_logout
+4	./mildlamb/.bash_profile
+16	./mildlamb
+629760	./mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz
+629820	.
+```
+- 检查根目录下，每个目录所占用的容量
+```bash
+[root@VM-16-14-centos home]# du -sm /*
+0	/bin
+123	/boot
+134	/data
+0	/dev
+37	/etc
+616	/home
+0	/lib
+0	/lib64
+1	/lost+found
+1	/media
+1	/mnt
+127	/opt
+du: cannot access ‘/proc/21770/task/21770/fd/4’: No such file or directory
+du: cannot access ‘/proc/21770/task/21770/fdinfo/4’: No such file or directory
+du: cannot access ‘/proc/21770/fd/4’: No such file or directory
+du: cannot access ‘/proc/21770/fdinfo/4’: No such file or directory
+0	/proc
+1	/root
+1	/run
+0	/sbin
+1	/srv
+0	/sys
+21	/tmp
+4873	/usr
+238	/var
+```
+- 挂载mount
+```bash
+[root@VM-16-14-centos home]# mount /dev/Gnar /mnt/Gnar
+```
+将外部设备 Gnar  挂载到 mnt目录的Gnar上，来实现访问
+- 卸载挂载设备 ：umount -f [挂载位置]    -f：强制卸载
