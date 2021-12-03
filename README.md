@@ -424,3 +424,7 @@ nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
 tcpdump:x:72:72::/:/sbin/nologin
 kindred:x:1000:1000::/home/kindred:/bin/bash
 ```
+- 用户组切换 
+```bash
+newgrp 组名
+```
