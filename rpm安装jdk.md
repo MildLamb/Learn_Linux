@@ -22,3 +22,16 @@ CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 PATH=$PATH:$JAVA_HOME/bin
 export PATH CLASSPATH JAVA_HOME
 ```
+5. 上传springboot项目
+  - 先打包成jar包
+  - 判断linux服务器防火墙是否开放端口  firewall-cmd --list-ports
+  - 如果没有系统防火墙
+```bash
+开启防火墙：systemctl start firewalld
+
+关闭防火墙：systemctl stop firewalld
+
+查看防火墙状态：systemctl status firewalld
+```
+  - 防火墙添加开放端口命令   firewall-cmd --zone=public --add-port=80/tcp --permanent
+  - 需要重启防火墙才能看到  重启命令  systemctl restart firewalld.service
