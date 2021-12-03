@@ -397,7 +397,13 @@ VM-16-14-centos
 [root@EngulfMissing ~]# groupdel gnardada             # 删除用户组   
 [root@EngulfMissing ~]# groupmod -g 1216 -n gnar gnardada   # 修改用户组    -g 编号  -n 名字  最后是修改哪个用户组
 ```
-**文件查看**
+
+- 用户组切换 
+```bash
+newgrp 组名
+```
+
+**用户文件查看**
 /etc/passwd  
 用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell
 ```bash
@@ -424,7 +430,4 @@ nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
 tcpdump:x:72:72::/:/sbin/nologin
 kindred:x:1000:1000::/home/kindred:/bin/bash
 ```
-- 用户组切换 
-```bash
-newgrp 组名
-```
+
