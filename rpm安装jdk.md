@@ -35,3 +35,10 @@ export PATH CLASSPATH JAVA_HOME
 ```
   - 防火墙添加开放端口命令   firewall-cmd --zone=public --add-port=80/tcp --permanent
   - 需要重启防火墙才能看到  重启命令  systemctl restart firewalld.service
+
+- linux 如何查看端口被哪个进程占用？
+  - lsof  -i:端口号
+  - netstat -tunlp |grep 端口号
+  - linux后台运行jar包
+  ```bashnohup java -jar xxx.jar &
+  ```
