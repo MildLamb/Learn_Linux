@@ -12,3 +12,13 @@ java -version
 ```bash
 rpm -ivh xxx.rpm
 ```
+4. **配置环境变量**  
+```bash
+[root@EngulfMissing jdk]# vim /etc/profile
+
+# 进入后在下面添加
+JAVA_HOME=/usr/java/jdk1.8.0_221-amd64
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+PATH=$PATH:$JAVA_HOME/bin
+export PATH CLASSPATH JAVA_HOME
+```
