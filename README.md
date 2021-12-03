@@ -515,3 +515,37 @@ du: cannot access ‘/proc/21770/fdinfo/4’: No such file or directory
 ```
 将外部设备 Gnar  挂载到 mnt目录的Gnar上，来实现访问
 - 卸载挂载设备 ：umount -f [挂载位置]    -f：强制卸载
+
+# 进程管理
+ps：查看当前系统中正在执行的各种进程的信息  
+- ps -xx：  
+  - -a：显示当前终端运行的所有的进程信息
+  - -u：以用户的信息显示进程
+  - -x：显示后台运行进程的参数
+
+```bash
+# ps -aux  查看所有的进程
+ps -aux|
+# | 在linux中叫做管道符   A|B  A的结果作为B的条件
+# grep 查找文件中符合条件的字符串
+```bash
+[root@VM-16-14-centos home]# ps -aux|grep mysql
+root      6965  0.0  0.0  12800  1756 ?        S    Dec02   0:00 /bin/sh /usr/local/mysql-5.7.26/bin/mysqld_safe --datadir=/data/mysql --pid-file=/data/mysql/mysql.pid
+mysql     7156  0.0  5.1 1340840 201576 ?      Sl   Dec02   0:21 /usr/local/mysql-5.7.26/bin/mysqld --basedir=/usr/local/mysql-5.7.26 --datadir=/data/mysql --plugin-dir=/usr/local/mysql-5.7.26/lib/plugin --user=mysql --log-error=/data/mysql/mysql.err --pid-file=/data/mysql/mysql.pid --socket=/tmp/mysql.sock --port=3306
+root     26995  0.0  0.0 115932  1008 pts/1    S+   10:26   0:00 grep --color=auto mysql
+```
+
+- ps -ef：可以查看到父进程的信息
+```bash
+ps -ef|grep mysql
+```
+- 线程树显示进程 pstree
+  - -p：显示父id
+  - -u：显示用户组
+```bash
+pstree -pu
+```
+- 结束进程，等价于windows的结束进程
+```bash
+kill -9 pid
+```
