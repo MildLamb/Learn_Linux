@@ -40,5 +40,6 @@ export PATH CLASSPATH JAVA_HOME
   - lsof  -i:端口号
   - netstat -tunlp |grep 端口号
   - linux后台运行jar包
-  ```bashnohup java -jar xxx.jar &
+  ```bash
+  nohup java -jar xxx.jar &
   ```
